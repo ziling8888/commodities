@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <style>
+        .box {
+            margin-top: 56px;
+        }
+
+        .list-tag {
+            top: 56px;
+            bottom: 0;
+            background-color: #ddd;
+            padding: 0;
+        }
+
+        .coll-text {
+            font-size: 16px;
+        }
+
+        .ca {
+            border: none;
+        }
+
+        .ca li {
+            cursor: pointer;
+        }
+
+        .ca h2 {
+            cursor: pointer;
+        }
+
+        .comment {
+            resize: none;
+            height: 120px !important;
+        }
+
+        .pro-active{
+            color: #e4393c !important;
+        }
+
+        .type-active{
+            color: #e4393c !important;
+        }
+
+        .pro-img{
+            width: 60px;
+            margin: 0 auto;
+        }
+
+        td{
+            vertical-align: middle;
+        }
+
+        .pro-title{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 500px;
+        }
+
+        .ishide{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">后台管理系统</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#c">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="c">
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active mr-md-3">
+                    <a id="nickname" class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item active mr-md-3">
+                        <a id="logout" class="nav-link" href="#">退出</a>
+                    </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <div class="box">
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- 左侧菜单 -->
+                <div class="col-lg-2 fixed-top list-tag d-none  d-lg-block">
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="card ca border-bottom">
+                                <div class="card-header">
+                                        <h2 class="mb-0">
+                                            <div class="coll-text addprotype">
+                                                添加商品类型
+                                            </div>
+                                        </h2>
+                                        </div>
+                        </div>
+
+                        <div class="card ca border-bottom">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <div class="coll-text" data-toggle="collapse" data-target="#one"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        添加商品
+                                    </div>
+                                </h2>
+                            </div>
+
+                            <div id="one" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body py-2">
+                                    <ul class="list-unstyled mb-0 add">
+                                        <!-- <li class="text-secondary" data-type="jujia">居家优品</li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card ca border-bottom">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <div class="collapsed coll-text" data-toggle="collapse" data-target="#two"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        查看商品
+                                    </div>
+                                </h2>
+                            </div>
+                            <div id="two" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body py-2">
+                                    <ul class="list-unstyled mb-0 showdata">
+                                        <!-- <li class="text-secondary" data-type="jujia">居家优品</li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-10 offset-lg-2 col-12">
+
+                    <div class="addtype">
+                        <div>
+                                <h2 class="my-3">添加商品类型</h2>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                            <form>
+                                                    <div class="form-group mb-3">
+                                                        <label for="">商品类型名称</label>
+                                                        <input id="type" type="text" class="form-control" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div id="commit" class="btn btn-primary">提交</div>
+                                                    </div>
+                                                </form>
+                                    </div>
+                                </div>
+                               
+                        </div>
+                        
+                    </div>
+
+                    <div class="addtype-pro ishide">
+                            <div>
+                                    <h2 class="my-3">添加<span id="ty">坚果</span>类型商品</h2>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                                <form>
+                                                        <div class="form-group mb-3">
+                                                            <label for="">商品名称</label>
+                                                            <input id="name" type="text" class="form-control pro" />
+                                                        </div>
+                                                        <div class="form-group mb-3">
+                                                                <label for="">商品价格</label>
+                                                                <input id="price" type="text" class="form-control pro" />
+                                                            </div>
+                                                            <div class="form-group mb-3">
+                                                                    <label for="">商品图片链接</label>
+                                                                    <input id="img" type="text" class="form-control pro" />
+                                                                </div>
+                                                        <div class="form-group">
+                                                            <div id="commit-pro" class="btn btn-primary">提交</div>
+                                                        </div>
+                                                    </form>
+                                        </div>
+                                    </div>
+                                   
+                            </div>
+                            
+                        </div>
+
+                    <div class="t ishide">
+                        <h3 class="my-4 p-t"></h3>
+                        <table class="table table-hover table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>序号</th>
+                                    <th>商品图片</th>
+                                    <th>商品名称</th>
+                                    <th>商品价格</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+            <!-- 模态框 编辑商品-->
+            <div class="modal fade" id="editm1">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 id="mtitle" class="modal-title">编辑商品</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+        
+                            <form>
+                                <div class="form-group mb-3">
+                                    <label for="">商品类型</label>
+                                    <input id="edit-pro-type" class="form-control" type="text" disabled />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="">商品名称</label>
+                                    <input data-title="title" class="form-control edit-pro" type="text" placeholder="商品名称" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="">商品价格</label>
+                                    <input data-title="price" class="form-control edit-pro" type="text" placeholder="商品价格" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="">商品图片链接</label>
+                                    <input data-title="img" class="form-control edit-pro" type="text" placeholder="商品图片链接" />
+                                </div>
+                            </form>
+        
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                            <button id="save" type="button" class="btn btn-primary">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

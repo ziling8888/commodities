@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <style>
+        .lc{
+           font-size: 21px;
+        }
+
+        .box{
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568005246132&di=3ff3ff4fa5dfe08d49e0817a2391a358&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201603%2F05%2F20160305133138_hyunm.jpeg") no-repeat center center;
+            background-size: cover;
+            /* filter: blur(1px); */
+            opacity: .7;
+        }
+
+        .tip-box{
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+       
+    </style>
+    </head>
+    <body>
+
+        <div class="box"></div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-2 offset-xl-5">
+                    <h2 class="text-center mt-5 mb-4 text-light">用户登录</h2>
+                    <form>
+                        <div class="form-group mb-3">
+                                <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">
+                                                <i class="fa fa-user-o"></i>
+                                          </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="username" placeholder="用户名" autocomplete="off">
+                                        <div class="invalid-feedback">
+                                            用户名 字母数字组合，必须字母开头，3-8字符
+                                        </div>
+                                      </div>
+                        </div>
+                        <div class="form-group  mb-3">
+                                <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">
+                                                <i class="fa fa-lock lc"></i>
+                                          </span>
+                                        </div>
+                                        <input type="password" class="form-control" id="pwd" placeholder="密码" autocomplete="off">
+                                        <div class="invalid-feedback">
+                                            字母数字组合 6-16字符
+                                        </div>
+                                      </div>
+                        </div>
+                        <div class="form-group">
+                            <button id="login" class="btn btn-primary btn-block" type="button" disabled>登录</button>
+                            <div class="text-light text-right mt-1">没有账号，<a class="text-light" href="./register.html">立即注册</a> </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="toast tip-box" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body text-center">
+            
+            </div>
+          </div>
+
+
+          <script src="./js/utils.js"></script>
+        <script src="./js/validform.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>
